@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #1c1c22;
+  --color-accent: #00ff99;
+  --color-accent-hover: #00e187;
+  --font-jetbrainsMono: var(--font-jetbrains-mono);
+  
+  /* Custom spacing and sizing */
+  --breakpoint-xl: 1280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1c1c22;
+  color: #ffffff;
+  font-family: var(--font-jetbrainsMono), monospace;
+  overflow-x: hidden;
+  padding: 2rem 0;
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding: 3rem 0;
+  }
+}
+
+.h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 1280px) {
+  .h1 {
+    font-size: 4.5rem;
+  }
+}
+
+.text-accent {
+  color: #00ff99;
+}
+
+.bg-accent {
+  background-color: #00ff99;
+}
+
+.border-accent {
+  border-color: #00ff99;
+}
+
+.bg-primary {
+  background-color: #1c1c22;
+}
+
+.text-primary {
+  color: #1c1c22;
+}
+
+.hover\:bg-accent-hover:hover {
+  background-color: #00e187;
+}
+
+.hover\:text-accent:hover {
+  color: #00ff99;
+}
+
+.hover\:bg-accent:hover {
+  background-color: #00ff99;
+}
+
+.hover\:text-primary:hover {
+  color: #1c1c22;
+}
+
+/* Animations */
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes particle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 20px), var(--ty, -20px));
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-jump {
+  animation: jump 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-particle {
+  animation: particle 3s ease-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 6s linear infinite;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Timeline Styles */
+.timeline-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+}
+
+.timeline-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 153, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 255, 153, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 255, 153, 0.15);
+}
