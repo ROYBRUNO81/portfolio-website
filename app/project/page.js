@@ -249,7 +249,7 @@ export default function Work() {
       <footer className="px-4 xl:px-0 py-24 xl:py-32">
         <div className="container mx-auto max-w-7xl text-center">
           <h2 className="text-3xl xl:text-4xl font-bold text-white" style={{ marginBottom: '2em' }}>
-            Let's <span className="text-accent">build something</span> together
+            Let&apos;s <span className="text-accent">build something</span> together
           </h2>
 
           {/* Removed footer subtext per request */}

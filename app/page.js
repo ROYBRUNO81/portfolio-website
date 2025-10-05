@@ -14,7 +14,7 @@ export default function Home() {
           <div className="text-center xl:text-left order-2 xl:order-none" style={{ marginTop: '4rem' }}>
             <span className="text-xl">Software Engineer & CS Student</span>
             <h1 className="h1 mb-20">
-              Hello, I'm <br />
+              Hello, I&apos;m <br />
               <span className="text-accent">Bruno Roy</span>
             </h1>
                 <p className="max-w-[600px] mb-8 text-white/80" style={{ marginBottom: '2.5rem' }}>

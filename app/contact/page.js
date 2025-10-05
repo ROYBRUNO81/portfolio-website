@@ -55,7 +55,7 @@ export default function Contact() {
               <div className="w-full max-w-[85%]" style={{ marginTop: '2em' }}>
                 <h2 className="text-2xl xl:text-3xl text-accent text-left" style={{ marginBottom: '1em' }}>Get in Touch</h2>
                 <p className="text-sm text-white/60 leading-snug mb-3 text-left">
-                  If you have a project or opportunity in mind, I'm all ears. Fill out the form and I'll respond as soon as I can.
+                  If you have a project or opportunity in mind, I&apos;m all ears. Fill out the form and I&apos;ll respond as soon as I can.
                 </p>
               </div>
               
