@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 const stats = [
   {
-    num: 4,
+    num: 3,
     text: "Years of experience",
   },
   {

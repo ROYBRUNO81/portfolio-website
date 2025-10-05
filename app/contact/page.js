@@ -32,7 +32,14 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const data = await res.json();
+      let data;
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        data = await res.json();
+      } else {
+        const text = await res.text();
+        data = { success: false, message: text || "Unexpected server response" };
+      }
       if (!res.ok || !data.success) {
         throw new Error(data.message || "Failed to send message");
       }
