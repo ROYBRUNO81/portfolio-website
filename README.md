@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with Next.js, styled with Tailwind CSS, and featuring smooth animations powered by Framer Motion. This template is inspired by [germain.vercel.app](https://germain.vercel.app/).
+A modern, responsive portfolio website built with Next.js, styled with Tailwind CSS, and featuring smooth animations powered by Framer Motion.
 
 ## Features
 
