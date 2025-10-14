@@ -59,6 +59,16 @@ const projects = [
     images: ["/project6.png"],
     githubLink: "https://github.com/ROYBRUNO81/Soccer-match-prediction/tree/main"
   }
+  ,
+  {
+    id: 7,
+    number: "07",
+    title: "Checkers Game",
+    description: "Built a full-featured international Checkers game in Java and Swing with save/load, undo, and restart. Implemented an AI opponent that learns and improves as you play more games for increasingly challenging matches.",
+    technologies: ["Java", "Swing", "AI"],
+    images: ["/project7.jpg"],
+    githubLink: "https://github.com/ROYBRUNO81"
+  }
 ];
 
 const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, isPaused, onTogglePause }) => {
