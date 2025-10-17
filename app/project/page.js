@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Socials from "@/components/Socials";
 
@@ -8,11 +8,12 @@ const projects = [
   {
     id: 1,
     number: "01",
-    title: "SwipeHire",
-    description: "Built a SwiftUI app enabling users to filter, save, and apply to jobs with a Fit Score algorithm. Designed an autofill system for one-tap job applications and implemented scalable backend logic to handle high-frequency filtering and requests.",
-    technologies: ["Swift"],
-    images: ["/project1.png"],
-    githubLink: "https://github.com/ROYBRUNO81/Swipe-Hire"
+    title: "SmartPath",
+    description: "Built a comprehensive SwiftUI student planner app for managing academic schedules, tasks, and study habits. Designed an intuitive card-based UI and implemented complex scheduling logic for recurring events, class management, and exam tracking. Created a focus Pomodoro timer and study streak tracking to enhance productivity.",
+    technologies: ["Swift", "SwiftUI", "SwiftData"],
+    images: ["/project1-1.png", "/project1-2.png", "/project1-3.png", "/project1-4.png", "/project1-5.png", "/project1-6.png"],
+    githubLink: "https://github.com/ROYBRUNO81/SmartPath",
+    isSpecialProject: true // Flag for special dual-image display
   },
   {
     id: 2,
@@ -68,19 +69,48 @@ const projects = [
     technologies: ["Java", "Swing", "AI"],
     images: ["/project7.jpg"],
     githubLink: "https://github.com/ROYBRUNO81"
+  },
+  {
+    id: 8,
+    number: "08",
+    title: "SwipeHire",
+    description: "Built a SwiftUI app enabling users to filter, save, and apply to jobs with a Fit Score algorithm. Designed an autofill system for one-tap job applications and implemented scalable backend logic to handle high-frequency filtering and requests.",
+    technologies: ["Swift"],
+    images: ["/project8.png"],
+    githubLink: "https://github.com/ROYBRUNO81/Swipe-Hire"
   }
 ];
 
-const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, isPaused, onTogglePause }) => {
+const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, isPaused, onTogglePause, isSpecialProject }) => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentPair, setCurrentPair] = useState(0);
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
+    if (isSpecialProject) {
+      setCurrentPair((prev) => (prev + 1) % 3); // 3 pairs for 6 images
+    } else {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    if (isSpecialProject) {
+      setCurrentPair((prev) => (prev - 1 + 3) % 3); // 3 pairs for 6 images
+    } else {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    }
   };
+
+  // Auto-advance for special project (every 3.33 seconds for 10 second total cycle)
+  useEffect(() => {
+    if (!isSpecialProject || isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentPair((prev) => (prev + 1) % 3);
+    }, 3333); // 10 seconds / 3 pairs = 3.33 seconds per pair
+
+    return () => clearInterval(interval);
+  }, [isSpecialProject, isPaused]);
 
   return (
     <div className="relative h-[400px] group">
@@ -88,14 +118,41 @@ const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, i
       <div className="h-full relative flex justify-center items-center bg-white/5 rounded-xl overflow-hidden">
         <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
         <div className="relative w-full h-full flex justify-center items-center bg-black rounded-xl">
-          <Image
-            alt={projectTitle}
-            src={images[currentImage]}
-            fill
-            className="object-contain"
-            sizes="100vw"
-            priority
-          />
+          {isSpecialProject ? (
+            // Special dual-image display for project 1
+            <div className="flex gap-2 w-full h-full justify-center items-center">
+              <div className="relative w-[100%] h-[100%]">
+                <Image
+                  alt={`${projectTitle} - Image ${currentPair * 2 + 1}`}
+                  src={images[currentPair * 2]}
+                  fill
+                  className="object-contain"
+                  sizes="48vw"
+                  priority
+                />
+              </div>
+              <div className="relative w-[100%] h-[100%]">
+                <Image
+                  alt={`${projectTitle} - Image ${currentPair * 2 + 2}`}
+                  src={images[currentPair * 2 + 1]}
+                  fill
+                  className="object-contain"
+                  sizes="48vw"
+                  priority
+                />
+              </div>
+            </div>
+          ) : (
+            // Regular single-image display
+            <Image
+              alt={projectTitle}
+              src={images[currentImage]}
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          )}
         </div>
       </div>
       
@@ -144,32 +201,46 @@ const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, i
 export default function Work() {
   const [currentProject, setCurrentProject] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
+
+  const startTimer = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentProject((prev) => (prev + 1) % projects.length);
+      }, 10000);
+    }
+  };
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
+    startTimer(); // Reset timer when manually navigating
   };
 
   const prevProject = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+    startTimer(); // Reset timer when manually navigating
   };
 
   const goToProject = (index) => {
     setCurrentProject(index);
+    startTimer(); // Reset timer when manually navigating
   };
 
   const togglePause = () => {
     setIsPaused((prev) => !prev);
   };
 
-  // Auto-advance projects every 5 seconds (only when not paused)
+  // Auto-advance projects every 10 seconds (only when not paused)
   useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
+    startTimer();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, [isPaused]);
 
   const project = projects[currentProject];
@@ -234,6 +305,7 @@ export default function Work() {
                 onNextProject={nextProject}
                 isPaused={isPaused}
                 onTogglePause={togglePause}
+                isSpecialProject={project.isSpecialProject}
               />
             </div>
           </div>
