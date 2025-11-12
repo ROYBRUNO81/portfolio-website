@@ -30,6 +30,25 @@ export default function Resume() {
               <div className="bg-[#232329] h-[220px] rounded-xl flex flex-col justify-between items-start border border-transparent hover:border-accent transition-all duration-300" style={{ padding: '24px' }}>
                 <div className="w-full">
                   <div className="mb-2">
+                    <span className="text-accent text-sm">2025 - 2027 (Expected)</span>
+                  </div>
+                  <h3 className="text-lg font-semibold leading-tight mb-2">University of Pennsylvania</h3>
+                  <p className="text-white/60 text-sm leading-tight overflow-hidden overflow-ellipsis line-clamp-2">
+                    M.S.E. in Computer Science
+                  </p>
+                  <p className="text-accent text-sm font-medium mt-1">
+                    GPA: 4.0/4.0
+                  </p>
+                </div>
+                <a href="https://drive.google.com/file/d/1lEFgn2rsSpFVKuNCH1GoqAjXxDkbcNRV/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
+                  <button className="w-full bg-transparent border border-white/20 text-white hover:bg-accent hover:text-primary hover:border-accent transition-all duration-300 py-2 px-4 rounded-lg text-sm font-medium">
+                    Transcript
+                  </button>
+                </a>
+              </div>
+              <div className="bg-[#232329] h-[220px] rounded-xl flex flex-col justify-between items-start border border-transparent hover:border-accent transition-all duration-300" style={{ padding: '24px' }}>
+                <div className="w-full">
+                  <div className="mb-2">
                     <span className="text-accent text-sm">2023 - 2027 (Expected)</span>
                   </div>
                   <h3 className="text-lg font-semibold leading-tight mb-2">University of Pennsylvania</h3>
