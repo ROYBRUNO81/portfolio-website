@@ -40,7 +40,7 @@ export default function Resume() {
                     GPA: 4.0/4.0
                   </p>
                 </div>
-                <a href="https://drive.google.com/file/d/1lEFgn2rsSpFVKuNCH1GoqAjXxDkbcNRV/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
+                <a href="https://drive.google.com/file/d/1HiZEMYNuxsv1JGB_5pWICdEKMsG1oZ8d/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
                   <button className="w-full bg-transparent border border-white/20 text-white hover:bg-accent hover:text-primary hover:border-accent transition-all duration-300 py-2 px-4 rounded-lg text-sm font-medium">
                     Transcript
                   </button>
@@ -59,7 +59,7 @@ export default function Resume() {
                     GPA: 3.65/4.0
                   </p>
                 </div>
-                <a href="https://drive.google.com/file/d/1lEFgn2rsSpFVKuNCH1GoqAjXxDkbcNRV/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
+                <a href="https://drive.google.com/file/d/1HiZEMYNuxsv1JGB_5pWICdEKMsG1oZ8d/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full mt-4">
                   <button className="w-full bg-transparent border border-white/20 text-white hover:bg-accent hover:text-primary hover:border-accent transition-all duration-300 py-2 px-4 rounded-lg text-sm font-medium">
                     Transcript
                   </button>
