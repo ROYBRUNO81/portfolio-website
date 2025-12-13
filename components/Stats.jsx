@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 const stats = [
   {
-    num: 3,
+    num: 4,
     text: "Years of experience",
   },
   {
-    num: 15,
+    num: 20,
     text: "Projects Completed",
   },
   {
@@ -15,7 +15,7 @@ const stats = [
     text: "Technologies Mastered",
   },
   {
-    num: 300,
+    num: 400,
     text: "Code Commits",
   },
 ];

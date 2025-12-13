@@ -5,6 +5,58 @@ import Image from "next/image";
 import Socials from "@/components/Socials";
 
 const projects = [
+  // Data Science/Machine Learning
+  {
+    id: 10,
+    number: "01",
+    title: "Flight Fare Prediction",
+    description: "Developed machine learning models to predict airline ticket prices using 57,000+ flight records. Engineered temporal, route-based, and seasonality features, compared linear and tree-based models, and achieved a 13% RMSE reduction using gradient boosting to identify key pricing drivers.",
+    technologies: ["Python", "Pandas", "Scikit-learn"],
+    images: ["/project10.png"],
+    githubLink: "https://roybruno81.github.io/flightprice.github.io/",
+    category: "Data Science/Machine Learning"
+  },
+  {
+    id: 9,
+    number: "02",
+    title: "Car Insurance Claim Prediction",
+    description: "Built binary classification models to predict insurance claims across imbalanced vehicle data and balanced driver profiles. Applied leakage-aware preprocessing, target encoding, and class-imbalance strategies, achieving strong discrimination with Random Forest and Logistic Regression models.",
+    technologies: ["Python", "Scikit-learn", "XGBoost"],
+    images: ["/project9.png"],
+    githubLink: "https://roybruno81.github.io/insurance.github.io/",
+    category: "Data Science/Machine Learning"
+  },
+  {
+    id: 2,
+    number: "03", 
+    title: "Img2GPS",
+    description: "Engineered a CNN model mapping images to GPS coordinates with ~67m error. Automated a data ingestion pipeline (Hugging Face → EXIF → Parquet), and optimized pipelines for large-scale image training.",
+    technologies: ["Python", "PyTorch", "Pandas"],
+    images: ["/project2.png"],
+    githubLink: "https://github.com/ROYBRUNO81/Image_to_GPS",
+    category: "Data Science/Machine Learning"
+  },
+  {
+    id: 14,
+    number: "04",
+    title: "Dwello",
+    description: "Architected a recommendation engine with 87% accuracy in matching users to neighborhoods. Processed and normalized 9M+ rows of real estate data, integrated Redis caching, and designed scalable APIs for housing/demographic filtering.",
+    technologies: ["Python", "PostgreSQL", "AWS", "Django"],
+    images: ["/project3.png"],
+    githubLink: "https://github.com/ROYBRUNO81/Dwello",
+    category: "Data Science/Machine Learning"
+  },
+  {
+    id: 6,
+    number: "05",
+    title: "Soccer Match Outcome Prediction",
+    description: "Engineered a Random Forest ML model on 50,000+ soccer matches, boosting prediction accuracy to 60%. Built feature pipelines for key performance indicators and deployed a real-time prediction dashboard in Django.",
+    technologies: ["Python", "Django", "Scikit-learn", "CSS", "HTML"],
+    images: ["/project6.png"],
+    githubLink: "https://github.com/ROYBRUNO81/Soccer-match-prediction/tree/main",
+    category: "Data Science/Machine Learning"
+  },
+  // Software Development
   {
     id: 1,
     number: "01",
@@ -13,71 +65,79 @@ const projects = [
     technologies: ["Swift", "SwiftUI", "SwiftData"],
     images: ["/project1-1.png", "/project1-2.png", "/project1-3.png", "/project1-4.png", "/project1-5.png", "/project1-6.png"],
     githubLink: "https://github.com/ROYBRUNO81/SmartPath",
-    isSpecialProject: true // Flag for special dual-image display
-  },
-  {
-    id: 2,
-    number: "02", 
-    title: "Img2GPS",
-    description: "Engineered a CNN model mapping images to GPS coordinates with ~67m error. Automated a data ingestion pipeline (Hugging Face → EXIF → Parquet), and optimized pipelines for large-scale image training.",
-    technologies: ["Python", "PyTorch", "Pandas"],
-    images: ["/project2.png"],
-    githubLink: "https://github.com/ROYBRUNO81/Image_to_GPS"
+    isSpecialProject: true, // Flag for special dual-image display
+    category: "Software Development"
   },
   {
     id: 3,
-    number: "03",
+    number: "02",
     title: "Dwello",
     description: "Architected a recommendation engine with 87% accuracy in matching users to neighborhoods. Processed and normalized 9M+ rows of real estate data, integrated Redis caching, and designed scalable APIs for housing/demographic filtering.",
     technologies: ["Python", "PostgreSQL", "AWS", "Django"],
     images: ["/project3.png"],
-    githubLink: "https://github.com/ROYBRUNO81/Dwello"
+    githubLink: "https://github.com/ROYBRUNO81/Dwello",
+    category: "Software Development"
   },
-  {
-    id: 4,
-    number: "04",
-    title: "Twitter Bot",
-    description: "Built a Java-based Markov Chain model achieving 92% similarity to real tweet patterns. Designed a streaming pipeline for 10M+ tweets and reduced tweet generation runtime by 35%.",
-    technologies: ["Java", "Markov Chains", "Streaming Pipelines"],
-    images: ["/project4.jpeg"],
-    githubLink: "https://github.com/ROYBRUNO81/Twitter-Bot"
-  },
-  {
-    id: 5,
-    number: "05",
-    title: "Roulis Lab",
-    description: "Built an end-to-end ETL workflow combining single-cell RNA-seq clustering with spatial mapping. Integrated cell-type assignments with spatial coordinates and designed neighborhood-detection algorithms.",
-    technologies: ["Python", "R"],
-    images: ["/project5.png"],
-    githubLink: "https://github.com/ROYBRUNO81/PURM2025"
-  },
-  {
-    id: 6,
-    number: "06",
-    title: "Soccer Match Outcome Prediction",
-    description: "Engineered a Random Forest ML model on 50,000+ soccer matches, boosting prediction accuracy to 60%. Built feature pipelines for key performance indicators and deployed a real-time prediction dashboard in Django.",
-    technologies: ["Python", "Django", "Scikit-learn", "CSS", "HTML"],
-    images: ["/project6.png"],
-    githubLink: "https://github.com/ROYBRUNO81/Soccer-match-prediction/tree/main"
-  }
-  ,
   {
     id: 7,
-    number: "07",
+    number: "03",
     title: "Checkers Game",
     description: "Built a full-featured international Checkers game in Java and Swing with save/load, undo, and restart. Implemented an AI opponent that learns and improves as you play more games for increasingly challenging matches.",
     technologies: ["Java", "Swing", "AI"],
     images: ["/project7.jpg"],
-    githubLink: "https://github.com/ROYBRUNO81"
+    githubLink: "https://github.com/ROYBRUNO81",
+    category: "Software Development"
   },
   {
     id: 8,
-    number: "08",
+    number: "04",
     title: "SwipeHire",
     description: "Built a SwiftUI app enabling users to filter, save, and apply to jobs with a Fit Score algorithm. Designed an autofill system for one-tap job applications and implemented scalable backend logic to handle high-frequency filtering and requests.",
     technologies: ["Swift"],
     images: ["/project8.png"],
-    githubLink: "https://github.com/ROYBRUNO81/Swipe-Hire"
+    githubLink: "https://github.com/ROYBRUNO81/Swipe-Hire",
+    category: "Software Development"
+  },
+  {
+    id: 4,
+    number: "05",
+    title: "Twitter Bot",
+    description: "Built a Java-based Markov Chain model achieving 92% similarity to real tweet patterns. Designed a streaming pipeline for 10M+ tweets and reduced tweet generation runtime by 35%.",
+    technologies: ["Java", "Markov Chains", "Streaming Pipelines"],
+    images: ["/project4.jpeg"],
+    githubLink: "https://github.com/ROYBRUNO81/Twitter-Bot",
+    category: "Software Development"
+  },
+  // Systems Development
+  {
+    id: 11,
+    number: "01",
+    title: "PennOS",
+    description: "Designed and implemented a UNIX-style operating system kernel featuring a priority scheduler, multithreaded process management, signal handling, and a FAT-based file system. Built a custom shell and syscall interface supporting job control, and process.",
+    technologies: ["C", "Docker"],
+    images: ["/project11.png"],
+    githubLink: "https://github.com/CIS548/25fa-cis5480-pennos-45",
+    category: "Systems Development"
+  },
+  {
+    id: 12,
+    number: "02",
+    title: "J Compiler",
+    description: "Built a compiler in C that translates a custom stack-oriented language into RISC-V assembly. Implemented lexical tokenization, stack-machine semantics, control-flow code generation (if/while), and function calls using RISC-V calling conventions.",
+    technologies: ["C", "RISC-V", "Docker"],
+    images: ["/project12.png"],
+    githubLink: "https://github.com/ROYBRUNO81",
+    category: "Systems Development"
+  },
+  {
+    id: 13,
+    number: "03",
+    title: "Penn Shell",
+    description: "Implemented a UNIX-like shell supporting pipelines, I/O redirection, foreground and background execution, and full job control. Built process group isolation, terminal control, and signal handling (Ctrl-C, Ctrl-Z) using POSIX system calls.",
+    technologies: ["C","Docker"],
+    images: ["/project13.png"],
+    githubLink: "https://github.com/CIS548/25fa-cis5480-roybruno81-christianishimwe-prj1",
+    category: "Systems Development"
   }
 ];
 
@@ -199,38 +259,61 @@ const ProjectCarousel = ({ images, projectTitle, onPrevProject, onNextProject, i
 };
 
 export default function Work() {
+  const [activeTab, setActiveTab] = useState("Data Science/Machine Learning");
   const [currentProject, setCurrentProject] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef(null);
+
+  const tabs = ["Data Science/Machine Learning", "Software Development", "Systems Development"];
+
+  // Filter projects by active tab and update numbering
+  const filteredProjects = projects
+    .filter(project => project.category === activeTab)
+    .map((project, index) => ({
+      ...project,
+      number: String(index + 1).padStart(2, '0'),
+      originalIndex: projects.findIndex(p => p.id === project.id)
+    }));
 
   const startTimer = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-    if (!isPaused) {
+    if (!isPaused && filteredProjects.length > 0) {
       intervalRef.current = setInterval(() => {
-        setCurrentProject((prev) => (prev + 1) % projects.length);
+        setCurrentProject((prev) => (prev + 1) % filteredProjects.length);
       }, 10000);
     }
   };
 
   const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length);
-    startTimer(); // Reset timer when manually navigating
+    if (filteredProjects.length > 0) {
+      setCurrentProject((prev) => (prev + 1) % filteredProjects.length);
+      startTimer(); // Reset timer when manually navigating
+    }
   };
 
   const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
-    startTimer(); // Reset timer when manually navigating
+    if (filteredProjects.length > 0) {
+      setCurrentProject((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
+      startTimer(); // Reset timer when manually navigating
+    }
   };
 
   const goToProject = (index) => {
-    setCurrentProject(index);
-    startTimer(); // Reset timer when manually navigating
+    if (index >= 0 && index < filteredProjects.length) {
+      setCurrentProject(index);
+      startTimer(); // Reset timer when manually navigating
+    }
   };
 
   const togglePause = () => {
     setIsPaused((prev) => !prev);
+  };
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setCurrentProject(0); // Reset to first project when switching tabs
   };
 
   // Auto-advance projects every 10 seconds (only when not paused)
@@ -241,89 +324,122 @@ export default function Work() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isPaused]);
+  }, [isPaused, activeTab, filteredProjects.length]);
 
-  const project = projects[currentProject];
+  // Reset to first project when tab changes
+  useEffect(() => {
+    setCurrentProject(0);
+  }, [activeTab]);
+
+  const project = filteredProjects.length > 0 ? filteredProjects[currentProject] : null;
 
   return (
     <div className="min-h-screen">
       <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
         <div className="container mx-auto">
-          <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-            {/* Left Column - Project Details */}
-            <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-              <div className="flex flex-col gap-[30px] h-[50%]">
-                {/* Project Number */}
-                <div className="text-8xl leading-none font-extrabold text-transparent" style={{ 
-                  WebkitTextStroke: '2px #ffffff',
-                  textStroke: '2px #ffffff'
-                }}>
-                  {project.number}
-                </div>
-                
-                {/* Project Title */}
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                  {project.title}
-                </h2>
-                
-                {/* Project Description */}
-                <p className="text-white/60">
-                  {project.description}
-                </p>
-                
-                {/* Technologies */}
-                <ul className="flex gap-4">
-                  {project.technologies.map((tech, index) => (
-                    <li key={index} className="text-xl text-accent">
-                      {tech}{index < project.technologies.length - 1 ? ',' : ''}
-                    </li>
-                  ))}
-                </ul>
-                
-                {/* Separator Line */}
-                <div className="border border-white/20"></div>
-                
-                {/* GitHub Link */}
-                <div className="flex items-center gap-4">
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    <button className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group hover:bg-white/10 transition-all">
-                      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-white text-3xl group-hover:text-accent transition-colors" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
-                      </svg>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right Column - Project Image */}
-            <div className="w-full xl:w-[50%]">
-              <ProjectCarousel 
-                images={project.images} 
-                projectTitle={project.title}
-                onPrevProject={prevProject}
-                onNextProject={nextProject}
-                isPaused={isPaused}
-                onTogglePause={togglePause}
-                isSpecialProject={project.isSpecialProject}
-              />
-            </div>
-          </div>
-          
-          {/* Project Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
-            {projects.map((_, index) => (
+          {/* Tabs Navigation */}
+          <div className="flex justify-center gap-8">
+            {tabs.map((tab) => (
               <button
-                key={index}
-                onClick={() => goToProject(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentProject 
-                    ? "bg-accent scale-125" 
-                    : "bg-white/30 hover:bg-white/50"
+                key={tab}
+                onClick={() => handleTabChange(tab)}
+                className={`relative pb-2 px-4 text-lg font-medium transition-all duration-300 border-b-2 ${
+                  activeTab === tab
+                    ? 'text-accent border-accent'
+                    : 'text-white border-transparent hover:text-accent'
                 }`}
-              />
+              >
+                {tab}
+              </button>
             ))}
           </div>
+
+          {/* Spacer between tabs and content */}
+          <div className="h-16 xl:h-24"></div>
+
+          {filteredProjects.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-white/60 text-lg">No projects in this category yet.</p>
+            </div>
+          ) : project ? (
+            <>
+              <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+                {/* Left Column - Project Details */}
+                <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+                  <div className="flex flex-col gap-[30px] h-[50%]">
+                    {/* Project Number */}
+                    <div className="text-8xl leading-none font-extrabold text-transparent" style={{ 
+                      WebkitTextStroke: '2px #ffffff',
+                      textStroke: '2px #ffffff'
+                    }}>
+                      {project.number}
+                    </div>
+                    
+                    {/* Project Title */}
+                    <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                      {project.title}
+                    </h2>
+                    
+                    {/* Project Description */}
+                    <p className="text-white/60">
+                      {project.description}
+                    </p>
+                    
+                    {/* Technologies */}
+                    <ul className="flex gap-4">
+                      {project.technologies.map((tech, index) => (
+                        <li key={index} className="text-xl text-accent">
+                          {tech}{index < project.technologies.length - 1 ? ',' : ''}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* Separator Line */}
+                    <div className="border border-white/20"></div>
+                    
+                    {/* GitHub Link */}
+                    <div className="flex items-center gap-4">
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                        <button className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group hover:bg-white/10 transition-all">
+                          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="text-white text-3xl group-hover:text-accent transition-colors" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
+                          </svg>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Right Column - Project Image */}
+                <div className="w-full xl:w-[50%]">
+                  <ProjectCarousel 
+                    images={project.images} 
+                    projectTitle={project.title}
+                    onPrevProject={prevProject}
+                    onNextProject={nextProject}
+                    isPaused={isPaused}
+                    onTogglePause={togglePause}
+                    isSpecialProject={project.isSpecialProject}
+                  />
+                </div>
+              </div>
+              
+              {/* Project Dots Indicator */}
+              <div className="flex justify-center gap-3 mt-8">
+                {filteredProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToProject(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentProject 
+                        ? "bg-accent scale-125" 
+                        : "bg-white/30 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : null}
         </div>
       </section>
 
